@@ -2,7 +2,7 @@ _base_ = [
     './queryinst_r101_fpn_300_proposals_crop_mstrain_480-800_3x_coco.py'
 ]
 
-CLASSES = ('Krimi')
+CLASSES = ('Krimi',)
 
 num_stages = 6
 
@@ -180,8 +180,9 @@ test_pipeline = [
         ])
 ]
 
-img_prefix = '/content/dataset'
-anno_root = img_prefix + '/annotations'
+data_root = '/content/dataset'
+anno_root = data_root + '/annotations'
+img_prefix = data_root + '/images'
 
 data = dict(
     samples_per_gpu=2,
